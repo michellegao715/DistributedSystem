@@ -1,0 +1,647 @@
+Last login: Sun Nov  2 23:49:09 2014 from stargate.cs.usfca.edu
+[jgao11@mc02 ~]$
+[jgao11@mc02 ~]$ cd CS682Proj2/michellegg-project2/src
+[jgao11@mc02 src]$ java -cp ../lib/json-simple-1.1.1.jar:. Driver 10.0.1.1
+BullyService running on beckend
+Known local ip: 10.0.1.2
+Starting Backend ....
+NewAnnounceReceiver
+Server started on port 12346
+Server started on port 7788
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+New Worker created
+Worker finished reading request:
+POST /tweets HTTP/1.1
+{"hashtags":["this","tweet"],"tweet":"#this is first #tweet"}
+BE send back response
+writing response:
+statusCode: 201, reason: Created, body:
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+DSCheck checking...
+Primary IP: 10.0.1.1
+Print out valid IPs after each DSCheck...
+/10.0.1.1
+/10.0.1.3
+/10.0.1.4
+/10.0.1.5
+getIPs size: 2
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+New Worker created
+Worker finished reading request:
+POST /tweets HTTP/1.1
+{"hashtags":["this","second","tweet"],"tweet":"#this is #second #tweet"}
+BE send back response
+writing response:
+statusCode: 201, reason: Created, body:
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+DSCheck checking...
+Primary IP: 10.0.1.1
+Print out valid IPs after each DSCheck...
+/10.0.1.1
+/10.0.1.3
+/10.0.1.4
+/10.0.1.5
+getIPs size: 2
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+DSCheck checking...
+Primary IP: 10.0.1.1
+Trying to start election
+Election started
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Get list of IPs from DiscoveryService
+1
+10.0.1.3
+ElectionRunner: host = 10.0.1.3
+Client sending request:
+Method: POST, host: 10.0.1.3, port: 7788, path: , params: {}, body: START
+New Worker created
+Worker finished reading request:
+POST / HTTP/1.1
+START
+writing response:
+statusCode: 200, reason: OK, body: MSG RECEIVED
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+New Worker created
+Worker finished reading request:
+POST / HTTP/1.1
+ELECTED
+Set new primary: 10.0.1.3
+writing response:
+statusCode: 200, reason: OK, body: MSG RECEIVED
+Client received response: statusCode: 200, reason: OK, body: OK
+Sleep 10s before declaring winning election
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Wake up from sleep
+Print out valid IPs after each DSCheck...
+/10.0.1.3
+/10.0.1.4
+/10.0.1.5
+getIPs size: 1
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+DSCheck checking...
+Primary IP: 10.0.1.3
+Print out valid IPs after each DSCheck...
+/10.0.1.3
+/10.0.1.4
+/10.0.1.5
+getIPs size: 1
+RECEIVED from 10.0.1.4: FRONTEND
+New Worker created
+Worker finished reading request:
+POST /tweets HTTP/1.1
+{"hashtags":["this","third","tweet"],"tweet":"#this is #third #tweet"}
+BE send back response
+writing response:
+statusCode: 201, reason: Created, body:
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+^C[jgao11@mc02 src]$ java -cp ../lib/json-simple-1.1.1.jar:. Driver 10.0.1.1
+BullyService running on beckend
+Known local ip: 10.0.1.2
+Starting Backend ....
+NewAnnounceReceiver
+Server started on port 12346
+Server started on port 7788
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+New Worker created
+Worker finished reading request:
+POST /tweets HTTP/1.1
+{"hashtags":["this","tweet"],"tweet":"#this is first #tweet"}
+BE send back response
+writing response:
+statusCode: 201, reason: Created, body:
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+DSCheck checking...
+Primary IP: 10.0.1.1
+Print out valid IPs after each DSCheck...
+/10.0.1.1
+/10.0.1.3
+/10.0.1.4
+/10.0.1.5
+getIPs size: 2
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+New Worker created
+Worker finished reading request:
+POST /tweets HTTP/1.1
+{"hashtags":["this","second","tweet"],"tweet":"#this is #second #tweet"}
+BE send back response
+writing response:
+statusCode: 201, reason: Created, body:
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+DSCheck checking...
+Primary IP: 10.0.1.1
+Print out valid IPs after each DSCheck...
+/10.0.1.1
+/10.0.1.3
+/10.0.1.4
+/10.0.1.5
+getIPs size: 2
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+DSCheck checking...
+Primary IP: 10.0.1.1
+Trying to start election
+Election started
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Get list of IPs from DiscoveryService
+1
+10.0.1.3
+ElectionRunner: host = 10.0.1.3
+Client sending request:
+Method: POST, host: 10.0.1.3, port: 7788, path: , params: {}, body: START
+New Worker created
+Worker finished reading request:
+POST / HTTP/1.1
+START
+writing response:
+statusCode: 200, reason: OK, body: MSG RECEIVED
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+New Worker created
+Worker finished reading request:
+POST / HTTP/1.1
+ELECTED
+Set new primary: 10.0.1.3
+writing response:
+statusCode: 200, reason: OK, body: MSG RECEIVED
+Client received response: statusCode: 200, reason: OK, body: OK
+Sleep 10s before declaring winning election
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Wake up from sleep
+Print out valid IPs after each DSCheck...
+/10.0.1.3
+/10.0.1.4
+/10.0.1.5
+getIPs size: 1
+RECEIVED from 10.0.1.4: FRONTEND
+New Worker created
+Worker finished reading request:
+POST /tweets HTTP/1.1
+{"hashtags":["this","third","tweet"],"tweet":"#this is #third #tweet"}
+BE send back response
+writing response:
+statusCode: 201, reason: Created, body:
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+RECEIVED from 10.0.1.5: FRONTEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+^C[jgao11@mc02 src]$ java -cp ../lib/json-simple-1.1.1.jar:. Driver 10.0.1.1
+BullyService running on beckend
+Known local ip: 10.0.1.2
+Starting Backend ....
+NewAnnounceReceiver
+Server started on port 12346
+Server started on port 7788
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.4: FRONTEND
+New Worker created
+Worker finished reading request:
+POST /tweets HTTP/1.1
+{"hashtags":["this","tweet"],"tweet":"#this is first #tweet"}
+BE send back response
+writing response:
+statusCode: 201, reason: Created, body:
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+DSCheck checking...
+Primary IP: 10.0.1.1
+Print out valid IPs after each DSCheck...
+/10.0.1.1
+/10.0.1.3
+/10.0.1.4
+/10.0.1.5
+getIPs size: 2
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+New Worker created
+Worker finished reading request:
+POST /tweets HTTP/1.1
+{"hashtags":["this","second","tweet"],"tweet":"#this is #second #tweet"}
+BE send back response
+writing response:
+statusCode: 201, reason: Created, body:
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+DSCheck checking...
+Primary IP: 10.0.1.1
+Print out valid IPs after each DSCheck...
+/10.0.1.1
+/10.0.1.3
+/10.0.1.4
+/10.0.1.5
+getIPs size: 2
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.1: BACKEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+DSCheck checking...
+Primary IP: 10.0.1.1
+Trying to start election
+Election started
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Get list of IPs from DiscoveryService
+1
+10.0.1.3
+ElectionRunner: host = 10.0.1.3
+Client sending request:
+Method: POST, host: 10.0.1.3, port: 7788, path: , params: {}, body: START
+New Worker created
+Worker finished reading request:
+POST / HTTP/1.1
+START
+writing response:
+statusCode: 200, reason: OK, body: MSG RECEIVED
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+New Worker created
+Worker finished reading request:
+POST / HTTP/1.1
+ELECTED
+Set new primary: 10.0.1.3
+writing response:
+statusCode: 200, reason: OK, body: MSG RECEIVED
+Client received response: statusCode: 200, reason: OK, body: OK
+Sleep 10s before declaring winning election
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Wake up from sleep
+Print out valid IPs after each DSCheck...
+/10.0.1.3
+/10.0.1.4
+/10.0.1.5
+getIPs size: 1
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+New Worker created
+Worker finished reading request:
+POST /tweets HTTP/1.1
+{"hashtags":["this","third","tweet"],"tweet":"#this is #third #tweet"}
+BE send back response
+writing response:
+statusCode: 201, reason: Created, body:
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND
+RECEIVED from 10.0.1.3: BACKEND
+java.net.DatagramSocket>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+DSCheck checking...
+Primary IP: 10.0.1.3
+Print out valid IPs after each DSCheck...
+/10.0.1.3
+/10.0.1.4
+/10.0.1.5
+getIPs size: 1
+RECEIVED from 10.0.1.5: FRONTEND
+RECEIVED from 10.0.1.4: FRONTEND

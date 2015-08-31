@@ -1,0 +1,14 @@
+[jgao11@mc06 ~]$ curl -X POST -d "{\"text\":\"#this is first #tweet\"}" http://10.0.1.4:12345/tweets
+[jgao11@mc06 ~]$ curl -X GET http://10.0.1.4:12345/tweets\?q\=tweet
+{"q":"tweet","tweets":["#this is first #tweet"]}[jgao11@mc06 ~]$
+[jgao11@mc06 ~]$ curl -X POST -d "{\"text\":\"#this is #second #tweet\"}" http://10.0.1.5:12345/tweets
+[jgao11@mc06 ~]$ curl -X GET http://10.0.1.4:12345/tweets\?q\=tweet
+{"q":"tweet","tweets":["#this is first #tweet","#this is #second #tweet"]}[jgao11@mc06 ~]$
+[jgao11@mc06 ~]$
+[jgao11@mc06 ~]$
+[jgao11@mc06 ~]$
+[jgao11@mc06 ~]$ curl -X GET http://10.0.1.4:12345/tweets\?q\=tweet
+{"q":"tweet","tweets":["#this is first #tweet","#this is #second #tweet"]}[jgao11@mc06 ~]$
+[jgao11@mc06 ~]$ curl -X POST -d "{\"text\":\"#this is #third #tweet\"}" http://10.0.1.4:12345/tweets
+[jgao11@mc06 ~]$ curl -X GET http://10.0.1.5:12345/tweets\?q\=tweet
+{"q":"tweet","tweets":["#this is first #tweet","#this is #second #tweet","#this is #third #tweet"]}[jgao11@mc06 ~]$

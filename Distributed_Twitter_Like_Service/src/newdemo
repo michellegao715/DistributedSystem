@@ -1,0 +1,11 @@
+run FrontEnd in 10.0.0.17
+run BackEnd/Driver in 10.0.0.25
+
+in command line:
+curl -X POST -d "{\"text\":\"#this is #second #tweet\"}" http://10.0.0.17:12345/tweets
+curl -X POST -d "{\"text\":\"#this is #first #tweet\"}" http://10.0.0.17:12345/tweets
+curl -X GET http://10.0.0.17:12345/tweets\?q\=tweet
+
+in chrome:
+http://10.0.0.17:12345/tweets?q=tweet 
+

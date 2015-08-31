@@ -1,0 +1,44 @@
+Usage:
+javac -cp ../lib/json-simple-1.1.1.jar:. *.java
+
+New:
+BullyService: 7788
+FrontEnd:12345
+BackEnd:12346
+
+
+
+
+Order of implementation:
+1. Discovery Service: 
+	DiscoveryService.java
+	DSAnnouncer.java
+	DSReceiver.java
+	DSCheck.java   (logic of updating a list of valid nodes) 
+	CompleteDNSClient.java (helper class) 
+
+2. Bully Election Service:
+	BullyService.java
+	BullyWorker.java
+	BullyWorkerFactory.java
+	
+	Details: 
+	3 kinds of messages: 
+		1. "start"    ("I" starts the election, and send request messages to other nodes alive)
+		2. "ok"		  ("I" have higher priority ID then "you", so "I" am OK to be the leader(primary server)). 
+		3. "elected"  ("I" become the new primary server, so remember my IP and port)  
+	
+	Situation of sending/receiving those messages: 
+				send(when to send the message)    receive(what to do after receiving the message)
+	"start"		a.startElect()					  a.send "ok"
+				b.receive "start"(from a lower    b.null
+				node, so I start election)				   
+		
+	"ok"        receive "start"					  null						
+	
+	"elected"	N seconds after startElect()	 setPrimary() 
+				without receiving any "ok"	
+		
+BEServer:
+flag is true  --> primary server
+flag is false --> secondary server
