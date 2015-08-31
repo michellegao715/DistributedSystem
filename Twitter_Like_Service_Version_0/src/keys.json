@@ -1,0 +1,5 @@
+{
+ "BackEndPORT":"12346",
+ "BackEndIP":"localhost",
+ "FrontEndPORT":"12345",
+}
