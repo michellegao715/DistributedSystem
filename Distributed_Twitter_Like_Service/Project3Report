@@ -1,0 +1,130 @@
+Based on previous projects, I have made following changes for project3 and I present changes for
+BackEnd. 
+
+Add SessionStore: I add feature of deleting tweet, and a user can only delete tweets added by himself. I will track the session of logged in user from SessionStore. 
+
+1.Changes of BackEnd:
+
+BEWorker:
+Variables added:
+private final TweetsStore tweetsStore;
+private final UserStore userStore;
+private final SessionStore sessionStore;
+(Delete original DataStore. )
+
+Functions added/modified:
+constructResponse(Request request);
+handleSignUpPost(Request request, boolean isReplication):if request sent from FE, store user info in UserStore and SessionStore; 
+if request sent from primary BE, replicate to all secondary BEs when new user signs up.
+handleLogInPost(Request request): handle request from FE when user logs in and check username and password.
+handleVerifyPost(Request request):track the session of logged in user before they do add/search/delete operation.
+handleLogOutPost(Request request, boolean isReplication): deal with replication issue when user logs out and delete session from SessionStore.
+handleDeletePost(Request request, boolean isReplication): delete tweet by it id,tweet and username from TweetsStore.
+handleTweetPost(Request request, boolean isReplication);
+handleTweetGet(Request request): 
+	handle these situations:
+		1.when new BE launches, it will request for entire data store from current primaryBE.
+		2.request sent from FE to search tweets by hashtag.
+		3.request sent by FE to search tweets by username when a user wants to delete tweets.
+replicateData(Request feRequest) + replicateCompleted(): Replication is successful when secondary BEs receive the message
+of "REPLICATE COMPLETED" sent by primary BE, and handle the situation when primaryBE dies in the middle of deleting tweets,
+then secondary BEs will not performReplication()( ReplicationRunner, SessionDeletionReplicationRunner, TweetCreationReplicationRunner, TweetDeletionReplicationRunner, UserCreationReplicationRunner). 
+
+2.Changes of Replication:
+Handle the replication when creating new user, user logging out, adding tweets, deleting tweets.
+Class added:
+SessionDeletionReplicationRunner
+TweetCreationReplicationRunner
+TweetDeletionReplicationRunner
+UserCreationReplicationRunner
+
+3.Changes of Data Store:
+Classes added: 
+UserStore; 
+SessionStore; 
+TweetsStore:
+	In TweetsStore, I save tweet by id,username.There are two important variables: hashtagVersions
+and usernameVersions to upate my cache and save network workload. When a user search by hashtag, it
+will compare its own hashtag version to cache's hashtag version, if cache is updated, then it will
+return all tweets of the hashtag. When a user wants to delete tweets, it will use username hashtag
+to get all updated tweets of the username(from cache if updated). 
+There are functions added to support this feature:(in Class TweetsStore)
+hashtagWithVersionsJSON();
+usernameWithVersionsJSON();
+updateUsernameCache(ArrayList<Tweet> tweets, String username, String version);
+updateHashtagCache(ArrayList<Tweet> tweets, String hashtag, String version);
+replicateStore(JSONObject object);
+delete(long id, String tweet, String username);
+getHashtagVersion(String hashtag);
+getUsernameVersion(String username);
+incrementHashtagVersion(String hashtag);
+incrementUsernameVersion(String username);
+
+4.Changes of Request:
+Variables added:
+Map<String, String> params: Handle different types of request:signup,login,verify,logout,delete,tweets.
+Map<String, String> cookies: Send request with cookie.
+
+Functions added:
+Request parse(String header, String cookieHeader, String body): parse cookie and create request. 
+
+5.Changes of Response:
+Variable added: 
+Map<String, String> cookies; 
+Function added:
+cookieString(); add cookie in response. 
+Response(int statusCode, String reason, String body, Map<String, String> cookies); send response with cookies.
+Response(String redirect);
+Response(String redirect, Map<String, String> cookies); 
+
+6.Changes of FrontEnd:
+FEWorker:
+Function Modified/Added to receive different kinds of requests and generate responses:
+constructResponse(): add different paths (/,/signup, /login, /create, /search, /delete, /logout) to handle different services. 
+boolean isLoggedIn(Request request);
+Response handleIndex(Request request);  Return html: constructLoggedInIndexResponseHTML() + constructLoggedInIndexResponseHTML().
+Response handleSignUpGet(Request request); Return html: constructSignUpResponseHTML() 
+Response handleSignUpPost(Request request); Return html:constructUsernamePasswordInvalidHTML(),constructUsernameExistHTML(), 
+Response handleLogInGet(Request request); Return html: constructLogInResponseHTML(), 
+Response handleLogInPost(Request request); Return html: constructLogInFailResponseHTML() 
+Response handleCreate(Request request); Return html: constructCreateResponseHTML()
+Response handleSearch(Request request); Return html: constructSearchResponseHTML() 
+Response handleDeleteGet(Request request); Return html: constructDeleteResponseHTML()
+Response handleDeletePost(Request request);
+Response handleLogOut(Request request);
+
+6.Changes of Worker:
+Function Added:
+Map<String, String> getFormParams(String data): get parameters in request.
+Map<String, String> getHiddenFormParams(String data): called when choosing which tweet to delete. 
+Parse cookie line when constructing response. 
+
+These are all files added/modified for project3. 
+src/BEWorker.java                         | 220 ++++++++++++++------
+ src/BEWorkerFactory.java                  |  12 +-
+ src/BackEnd.java                          |  34 +--
+ src/BullyService.java                     |   4 +-
+ src/Client.java                           |  17 ++
+ src/DataStore.java                        |  52 -----
+ src/Driver.java                           |   5 +-
+ src/ElectionRunner.java                   |   2 +-
+ src/FEWorker.java                         | 514 ++++++++++++++++++++++++++++++++++++++++------
+ src/FEWorkerFactory.java                  |   4 +-
+ src/FrontEnd.java                         |   9 +-
+ src/KeysJsonParser.java                   |   1 +
+ src/ReplicationRunner.java                |  17 +-
+ src/Request.java                          |  40 ++--
+ src/Response.java                         |  58 +++++-
+ src/SessionDeletionReplicationRunner.java |  15 ++
+ src/SessionStore.java                     |  37 ++++
+ src/TweetCreationReplicationRunner.java   |  17 ++
+ src/TweetDeletionReplicationRunner.java   |  19 ++
+ src/TweetsStore.java                      | 235 +++++++++++++++++++++
+ src/UserCreationReplicationRunner.java    |  20 ++
+ src/UserStore.java                        |  88 ++++++++
+ src/Worker.java                           |  48 ++++-
+ src/demo                                  |   2 +-
+ src/keys.json                             |   2 +-
+ src/newdemo                               |  11 +
+ src/readme                                |   6 +
+ 27 files changed, 1235 insertions(+), 254 deletions(-)

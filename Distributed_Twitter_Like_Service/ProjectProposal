@@ -1,0 +1,21 @@
+Project3 Proposal
+
+Goals and Objectives:
+I will add following functionalities to my strong consistency Twitter service.
+1.Support user accounts and authentication.
+User should register/log in to use the service. 
+Use simple HTTP GET/POST (with command "curl") for all user communications with the frontend to
+create user/login/add or delete tweet/search tweet. 
+Use cookie to track the session of user information. 
+Create a new hashmap which stores pairs of tweet and username. 
+User should log out after he finishes using the service. 
+2.Support deletion of tweets.
+A user can only delete his own tweets, so use cookie to track the username, and then compare the
+username to the tweet's username in data store when deleting the tweet. 
+ 
+Professor's comments:
+1.Will the new hashmap replace the previous?
+2.What if the user does not log out? Will a session eventually time out?
+3.What changes will need to be made to your current implementation of strong consistency?
+4.Please specifically outline your algorithm for deleting a tweet from all replicas, and also outline how you will maintain consistency among replicas in case the primary fails during a delete.
+5.I will expect that you will implement a robust log plus snapshot mechanism.
