@@ -1,0 +1,49 @@
+1.launch a primary + secondary :
+on mc01:(primary BE)
+java -cp ../lib/json-simple-1.1.1.jar:. Driver 10.0.1.1
+on mc02:(secondary BE)
+java -cp ../lib/json-simple-1.1.1.jar:. Driver 10.0.1.1
+
+2.launch at least two frontend nodes:
+on mc03m mc04:
+	java -cp ../lib/json-simple-1.1.1.jar:. FrontEnd 
+
+3. execute several POST and GET requests from each frontend:
+curl -X POST -d "{\"text\":\"#this is #first #tweet\"}" http://10.0.1.3:12345/tweets
+curl -X GET http://10.0.1.3:12345/tweets\?q\=tweet
+
+curl -X POST -d "{\"text\":\"#this is #second #tweet\"}" http://10.0.1.4:12345/tweets
+curl -X GET http://10.0.1.3:12345/tweets\?q\=tweet
+curl -X GET http://10.0.1.4:12345/tweets\?q\=tweet
+
+4.launch a second secondary node:
+on mc06:
+java -cp ../lib/json-simple-1.1.1.jar:. Driver 10.0.1.1
+(print out copy of datastore in command line) 
+
+5.launch another frontend
+on mc05:
+java -cp ../lib/json-simple-1.1.1.jar:. FrontEnd
+
+6. Execute several POST and GET requests from the frontends:
+curl -X GET http://10.0.1.5:12345/tweets\?q\=tweet
+curl -X POST -d "{\"text\":\"#this is #third #tweet\"}" http://10.0.1.5:12345/tweets
+curl -X GET http://10.0.1.3:12345/tweets\?q\=tweet
+curl -X GET http://10.0.1.4:12345/tweets\?q\=tweet
+
+7. Kill the primary BE:(mc01) 
+print out start election in command line.
+
+8. Execute several POST and GET from frontends:
+curl -X GET http://10.0.1.3:12345/tweets\?q\=tweet
+curl -X GET http://10.0.1.4:12345/tweets\?q\=first
+curl -X GET http://10.0.1.5:12345/tweets\?q\=second
+
+9. Test for consistency:(backward)
+curl -X POST -d "{\"text\":\"#this is #fourth #tweet\"}" http://10.0.1.3:12345/tweets
+(after 1s kill the current primary(should be 10.0.1.5) , then there should be no new tweet saved into BE servers) 
+curl -X GET http://10.0.1.4:12345/tweets\?q\=tweet
+
+
+
+
